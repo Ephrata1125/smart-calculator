@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple, elegant calculator built with HTML, CSS and JavaScript.">
+    <title>Smart Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="page">
+        <section class="calculator">
+            <header class="header">
+                <span class="eyebrow">EVERYDAY ESSENTIALS</span>
+                <h1>Calculator<span>.</span></h1>
+                <p>Simple things, beautifully calculated.</p>
+            </header>
+
+            <div class="display" aria-live="polite">
+                <div id="previous" class="previous"></div>
+                <output id="screen" class="screen">0</output>
+            </div>
+
+            <div class="keypad">
+                <button class="key utility" data-action="clear">AC</button>
+                <button class="key utility" data-action="delete" aria-label="Delete last digit">DEL</button>
+                <button class="key utility" data-action="percent">%</button>
+                <button class="key operator" data-operator="÷">÷</button>
+
+                <button class="key" data-number="7">7</button>
+                <button class="key" data-number="8">8</button>
+                <button class="key" data-number="9">9</button>
+                <button class="key operator" data-operator="×">×</button>
+
+                <button class="key" data-number="4">4</button>
+                <button class="key" data-number="5">5</button>
+                <button class="key" data-number="6">6</button>
+                <button class="key operator" data-operator="−">−</button>
+
+                <button class="key" data-number="1">1</button>
+                <button class="key" data-number="2">2</button>
+                <button class="key" data-number="3">3</button>
+                <button class="key operator" data-operator="+">+</button>
+
+                <button class="key utility" data-action="sign">+/−</button>
+                <button class="key" data-number="0">0</button>
+                <button class="key" data-action="decimal">.</button>
+                <button class="key equals" data-action="equals">=</button>
+            </div>
+
+            <footer>Made with care · Efrata</footer>
+        </section>
+    </main>
+</body>
+</html>
