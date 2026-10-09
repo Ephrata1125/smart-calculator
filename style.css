@@ -1,0 +1,197 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap');
+
+:root {
+    --background: #f5f0e9;
+    --card: #fffdf9;
+    --brown: #604638;
+    --brown-dark: #3c2b23;
+    --muted: #9b8c80;
+    --border: #eee5db;
+    --operator: #ede1d5;
+    --accent: #8a654f;
+    --shadow: 0 24px 70px rgba(74, 48, 33, 0.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'DM Sans', sans-serif;
+    color: var(--brown-dark);
+    background:
+        radial-gradient(circle at 10% 15%, #e9ded0 0, transparent 28%),
+        radial-gradient(circle at 90% 85%, #e6d8c8 0, transparent 30%),
+        var(--background);
+}
+
+button {
+    font: inherit;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 18px;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 390px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 28px;
+    background: var(--card);
+    box-shadow: var(--shadow);
+}
+
+.header {
+    margin-bottom: 26px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+h1 {
+    margin-top: 12px;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 34px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+h1 span {
+    color: #b58c6d;
+}
+
+.header p {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.display {
+    min-height: 115px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 12px;
+    padding: 20px 4px;
+    margin-bottom: 18px;
+    overflow: hidden;
+}
+
+.previous {
+    min-height: 16px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.screen {
+    display: block;
+    max-width: 100%;
+    color: var(--brown-dark);
+    font-size: clamp(32px, 9vw, 44px);
+    font-weight: 500;
+    letter-spacing: -1.5px;
+    overflow-wrap: anywhere;
+    text-align: right;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.key {
+    min-width: 0;
+    height: 60px;
+    border: 1px solid transparent;
+    border-radius: 17px;
+    background: #f7f3ee;
+    color: var(--brown-dark);
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.15s ease, background 0.15s ease,
+                box-shadow 0.15s ease;
+}
+
+.key:hover {
+    background: #eee5db;
+    transform: translateY(-2px);
+}
+
+.key:active {
+    transform: scale(0.95);
+}
+
+.key:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.utility {
+    background: #f0e9e1;
+    color: var(--accent);
+    font-size: 13px;
+}
+
+.operator {
+    background: var(--operator);
+    color: var(--brown);
+    font-size: 21px;
+}
+
+.equals {
+    background: var(--brown);
+    color: white;
+    box-shadow: 0 5px 12px rgba(74, 48, 33, 0.16);
+}
+
+.equals:hover {
+    background: var(--brown-dark);
+}
+
+footer {
+    margin-top: 24px;
+    color: #aa9b8e;
+    font-size: 10px;
+    letter-spacing: 0.6px;
+    text-align: center;
+}
+
+@media (max-width: 380px) {
+    .calculator {
+        padding: 22px;
+    }
+
+    .keypad {
+        gap: 8px;
+    }
+
+    .key {
+        height: 54px;
+        border-radius: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+}
